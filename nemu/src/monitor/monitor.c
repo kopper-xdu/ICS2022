@@ -151,10 +151,9 @@ void init_monitor(int argc, char *argv[])
 
 	/* Initialize differential testing. */
 	init_difftest(diff_so_file, img_size, difftest_port);
-
+printf("---------------1");
 	/* Initialize the simple debugger. */
 	init_sdb();
-	printf("---------------1");
 
 	IFDEF(CONFIG_ITRACE, init_disasm(
 							 MUXDEF(CONFIG_ISA_x86, "i686",
