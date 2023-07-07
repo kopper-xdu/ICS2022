@@ -142,8 +142,6 @@ void init_monitor(int argc, char *argv[])
 
 	/* Initialize devices. */
 	IFDEF(CONFIG_DEVICE, init_device());
-	printf("---------------1");
-
 
 	/* Perform ISA dependent initialization. */
 	init_isa();
@@ -156,6 +154,7 @@ void init_monitor(int argc, char *argv[])
 
 	/* Initialize the simple debugger. */
 	init_sdb();
+	printf("---------------1");
 
 	IFDEF(CONFIG_ITRACE, init_disasm(
 							 MUXDEF(CONFIG_ISA_x86, "i686",
