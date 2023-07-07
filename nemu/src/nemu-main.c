@@ -28,6 +28,8 @@ int main(int argc, char *argv[])
 #else
 	printf("---------------1");
 	init_monitor(argc, argv);
+	printf("---------------1");
+
 #endif
 
 	/* Start engine. */
