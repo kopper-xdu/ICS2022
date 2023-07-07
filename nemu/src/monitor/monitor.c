@@ -63,7 +63,6 @@ static long load_img()
 	Log("The image is %s, size = %ld", img_file, size);
 
 	fseek(fp, 0, SEEK_SET);
-	printf("load image to 0x%x\n", RESET_VECTOR);
 
 	int ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
 	assert(ret == 1);
@@ -79,7 +78,7 @@ static long load_img()
 	elf_file[strlen(elf_file) - 3] = 'e';
 	elf_file[strlen(elf_file) - 2] = 'l';
 	elf_file[strlen(elf_file) - 1] = 'f';
-
+	printf("load image to 0x%x\n", RESET_VECTOR);
 	parse_elf(elf_file);
 	return size;
 }
