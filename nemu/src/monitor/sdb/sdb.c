@@ -54,7 +54,7 @@ static char *rl_gets()
 
 static int cmd_c(char *args)
 {
-	printf("cmd_c\n");
+	printf("c--------------------------------------md_c\n");
 	cpu_exec(-1);
 	void print_ftrace();
 	print_ftrace();
