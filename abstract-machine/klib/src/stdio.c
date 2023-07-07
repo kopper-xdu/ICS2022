@@ -35,14 +35,14 @@ uint32_t __attribute__((weak)) __div64_32(unsigned long long *n, uint32_t base);
 
 int printf(const char *fmt, ...)
 {
-	char buf[100];
+	char buf[10000];
 	va_list args;
   	int i;
   	va_start (args, fmt);
   	i = vsprintf(buf, fmt, args);
 	va_end (args);
 
-	
+	putch(i);
 	for (int k = 0; k < i; k++)
 		putch(buf[k]);
 	return i;
