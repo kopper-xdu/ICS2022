@@ -67,6 +67,8 @@ static long load_img()
 	int ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
 	assert(ret == 1);
 
+	printf("---------------1");
+
 	fclose(fp);
 
 	void parse_elf(char *);
@@ -147,7 +149,7 @@ void init_monitor(int argc, char *argv[])
 	init_isa();
 	/* Load the image to memory. This will overwrite the built-in image. */
 	long img_size = load_img();
-printf("---------------1");
+
 	/* Initialize differential testing. */
 	init_difftest(diff_so_file, img_size, difftest_port);
 
