@@ -50,6 +50,7 @@ void print_ftrace() {
             printf("0x%08lx: ret [%s@0x%08lx]\n", p->next->addr, p->next->dst_name, p->next->dst_addr);
         p = p->next;
     }
+    printf("1111");
 }
 
 
