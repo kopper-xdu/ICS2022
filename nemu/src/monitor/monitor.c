@@ -67,15 +67,12 @@ static long load_img()
 	int ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
 	assert(ret == 1);
 
-	printf("load image to 0x%x\n", RESET_VECTOR);
-
 	fclose(fp);
 
 	void parse_elf(char *);
 
 	char elf_file[1000];
 	strcpy(elf_file, img_file);
-	printf("load image to 0x%x\n", RESET_VECTOR);
 	elf_file[strlen(elf_file) - 3] = 'e';
 	elf_file[strlen(elf_file) - 2] = 'l';
 	elf_file[strlen(elf_file) - 1] = 'f';
