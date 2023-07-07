@@ -73,8 +73,8 @@ static long load_img()
 
 	void parse_elf(char *);
 
-	char elf_file[100];
-	// strcpy(elf_file, img_file);
+	char elf_file[1000];
+	strcpy(elf_file, img_file);
 	printf("load image to 0x%x\n", RESET_VECTOR);
 	elf_file[strlen(elf_file) - 3] = 'e';
 	elf_file[strlen(elf_file) - 2] = 'l';
