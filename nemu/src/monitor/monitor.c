@@ -65,9 +65,10 @@ static long load_img()
 	fseek(fp, 0, SEEK_SET);
 	printf("load image to 0x%x\n", RESET_VECTOR);
 
-	// int ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
-	// assert(ret == 1);
+	int ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
+	assert(ret == 1);
 
+	printf("load image to 0x%x\n", RESET_VECTOR);
 
 	fclose(fp);
 
