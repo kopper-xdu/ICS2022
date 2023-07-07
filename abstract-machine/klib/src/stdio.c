@@ -42,7 +42,6 @@ int printf(const char *fmt, ...)
   	i = vsprintf(buf, fmt, args);
 	va_end (args);
 
-	putch(i);
 	for (int k = 0; k < i; k++)
 		putch(buf[k]);
 	return i;
