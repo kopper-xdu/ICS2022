@@ -56,8 +56,8 @@ static int cmd_c(char *args)
 {
 	cpu_exec(-1);
 	// printf("1\n");
-	void print_ftrace();
-	print_ftrace();
+	// void print_ftrace();
+	// print_ftrace();
 	return 0;
 }
 
