@@ -35,7 +35,7 @@ uint32_t __attribute__((weak)) __div64_32(unsigned long long *n, uint32_t base);
 
 int printf(const char *fmt, ...)
 {
-	char buf[300];
+	char buf[1000];
 	va_list args;
   	int i;
   	va_start (args, fmt);
