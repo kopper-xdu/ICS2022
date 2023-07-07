@@ -49,8 +49,10 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc)
 	if (flag)
 		nemu_state.state = NEMU_STOP;
 
+#ifdef CONFIG_ITRACE_COND
 	void write_to_iringbuf(char *s);
 	write_to_iringbuf(_this->logbuf);
+#endif
 }
 
 static void exec_once(Decode *s, vaddr_t pc)
