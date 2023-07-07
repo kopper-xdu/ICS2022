@@ -1,3 +1,4 @@
+
 menu "Memory Configuration"
 
 config MBASE
@@ -22,6 +23,15 @@ config PMEM_MALLOC
 config PMEM_GARRAY
   depends on !TARGET_AM
   bool "Using global array"
+endchoice
+
+choice
+  prompt "memory acess tracking"
+  default MEM_TRACE
+config MEM_TRACE
+  bool "Enable memory acess track"
+config NO_MEM_TRACE
+  bool "disable memory acess track"
 endchoice
 
 config MEM_RANDOM

@@ -24,9 +24,6 @@
 #include "llvm/MC/MCInstPrinter.h"
 #if LLVM_VERSION_MAJOR >= 14
 #include "llvm/MC/TargetRegistry.h"
-#if LLVM_VERSION_MAJOR >= 15
-#include "llvm/MC/MCSubtargetInfo.h"
-#endif
 #else
 #include "llvm/Support/TargetRegistry.h"
 #endif
@@ -88,8 +85,6 @@ extern "C" void init_disasm(const char *triple) {
       AsmInfo->getAssemblerDialect(), *AsmInfo, *gMII, *gMRI);
   gIP->setPrintImmHex(true);
   gIP->setPrintBranchImmAsAddress(true);
-  if (isa == "riscv32" || isa == "riscv64")
-    gIP->applyTargetSpecificCLOption("no-aliases");
 }
 
 extern "C" void disassemble(char *str, int size, uint64_t pc, uint8_t *code, int nbyte) {

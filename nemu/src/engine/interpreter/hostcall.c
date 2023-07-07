@@ -18,6 +18,8 @@
 #include <isa.h>
 #include <cpu/difftest.h>
 
+void print_iringbuf();
+
 void set_nemu_state(int state, vaddr_t pc, int halt_ret) {
   difftest_skip_ref();
   nemu_state.state = state;
@@ -27,6 +29,9 @@ void set_nemu_state(int state, vaddr_t pc, int halt_ret) {
 
 __attribute__((noinline))
 void invalid_inst(vaddr_t thispc) {
+  printf("latest 10 instructions:\n");
+  print_iringbuf();
+
   uint32_t temp[2];
   vaddr_t pc = thispc;
   temp[0] = inst_fetch(&pc, 4);
