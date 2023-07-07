@@ -35,7 +35,13 @@ uint32_t __attribute__((weak)) __div64_32(unsigned long long *n, uint32_t base);
 
 int printf(const char *fmt, ...)
 {
-	panic("Not implemented");
+	va_list args;
+	int i;
+
+	va_start(args, fmt);
+	i=vsprintf(NULL,fmt,args);
+	va_end(args);
+	return i;
 }
 
 int sprintf(char *out, const char *fmt, ...)
