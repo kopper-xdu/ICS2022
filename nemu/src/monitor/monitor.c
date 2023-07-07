@@ -60,13 +60,11 @@ static long load_img()
 
 	fseek(fp, 0, SEEK_END);
 	long size = ftell(fp);
-	printf("---------------1");
 	Log("The image is %s, size = %ld", img_file, size);
 
-printf("---------------1");
 	fseek(fp, 0, SEEK_SET);
-	int ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
 	printf("---------------1");
+	int ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
 	assert(ret == 1);
 
 
