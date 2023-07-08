@@ -21,7 +21,12 @@
 typedef struct {
   word_t gpr[32];
   vaddr_t pc;
+  vaddr_t mepc;      // 异常pc    0x341
+  word_t mcause;    // 原因      0x342
+  word_t mtvec;     // 异常入地址 0x305
+  word_t mstatus;   // 状态      0x300
 } riscv64_CPU_state;
+
 
 // decode
 typedef struct {
