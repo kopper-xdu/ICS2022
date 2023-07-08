@@ -201,7 +201,7 @@ static int decode_exec(Decode *s)
 	INSTPAT("0000001 ????? ????? 110 ????? 01110 11", remw, R, R(dest) = SEXT((int32_t) BITS(src1, 31, 0) % (int32_t) BITS(src2, 31, 0), 32));
 	INSTPAT("0000001 ????? ????? 111 ????? 01110 11", remuw, R, R(dest) = SEXT((uint32_t) BITS(src1, 31, 0) % (uint32_t) BITS(src2, 31, 0), 32));
 
-	INSTPAT("0000000 00000 00000 000 00000 11100 11", ecall, R, isa_raise_intr(R(17), s->pc));
+	INSTPAT("0000000 00000 00000 000 00000 11100 11", ecall, R, isa_raise_intr(R(11), s->pc));
 
 	// RV32/RV64 Zifencei Standard Extension
 	// INSTPAT("0000000 00000 00000 001 00000 00011 11", fence.i, I, R(dest) = imm);
